@@ -1,0 +1,71 @@
+Breakpoint 2, main () at p3final.c:26
+26    s=input_n();
+(gdb) s
+input_n () at p3final.c:3
+3   {
+(gdb) n
+5     printf("enter the value\n");
+(gdb) n
+enter the value
+6     scanf("%d",&n);
+(gdb) n
+5
+7     return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p3final.c:27
+27    i=sum_n(s);
+(gdb) s
+sum_n (n=5) at p3final.c:11
+11    int i=0,sum=0;
+(gdb) n
+12    for(i=1;i<=n;i++)
+(gdb) n
+14      sum+=i;
+(gdb) n
+12    for(i=1;i<=n;i++)
+(gdb) n
+14      sum+=i;
+(gdb) n
+12    for(i=1;i<=n;i++)
+(gdb) n
+14      sum+=i;
+(gdb) n
+12    for(i=1;i<=n;i++)
+(gdb) n
+14      sum+=i;
+(gdb) n
+12    for(i=1;i<=n;i++)
+(gdb) n
+14      sum+=i;
+(gdb) n
+12    for(i=1;i<=n;i++)
+(gdb) n
+16    return sum;
+(gdb) n
+18  }
+(gdb) n
+main () at p3final.c:28
+28    output(s,i);
+(gdb) s
+output (n=5, sum=15) at p3final.c:21
+21    printf("the sum of the %d is %d",n,sum);
+(gdb) n
+22  }
+(gdb) n
+main () at p3final.c:29
+29    return 0;
+(gdb) p i
+$1 = 15
+(gdb) p s
+$2 = 5
+(gdb) l
+24  {
+25    int i,s;
+26    s=input_n();
+27    i=sum_n(s);
+28    output(s,i);
+29    return 0;
+30  }
+(gdb) 
