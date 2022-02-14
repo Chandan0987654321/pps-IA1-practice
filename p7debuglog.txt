@@ -1,0 +1,54 @@
+Breakpoint 1, main () at p7original.c:28
+28  {
+(gdb) n
+30    input_complex(&a,&b);
+(gdb) s
+input_complex (a=0x7ffec71c9970, b=0x7ffec71c9978) at p7original.c:10
+10   printf("enter a complex number:\n");
+(gdb) n
+enter a complex number:
+11   scanf("%f%f",&a->real,&a->imaginary);
+(gdb) n
+4 5
+12   scanf("%f%f",&b->real,&b->imaginary);
+(gdb) n
+4 6
+13  }
+(gdb) n
+main () at p7original.c:31
+31    sum=add(a,b);
+(gdb) s
+add (a=..., b=...) at p7original.c:18
+18    sum.real=a.real+b.real;
+(gdb) n
+19    sum.imaginary=a.imaginary+b.imaginary;
+(gdb) n
+21    return sum;
+(gdb) n
+22  }
+(gdb) n
+main () at p7original.c:32
+32    output(a,b,sum);
+(gdb) s
+output (a=..., b=..., sum=...) at p7original.c:25
+25    printf("the sum of (%f+%fi) and (%f+%fi) is (%f+%fi)\n",a.real,a.imaginary,b.real,b.imaginary,sum.real,sum.imaginary);
+(gdb) n
+the sum of (4.000000+5.000000i) and (4.000000+6.000000i) is (8.000000+11.000000i)
+26  }
+(gdb) n
+main () at p7original.c:33
+33    return 0;
+(gdb) p a
+$1 = {real = 4, imaginary = 5}
+(gdb) p b
+$2 = {real = 4, imaginary = 6}
+(gdb) p sum
+$3 = {real = 8, imaginary = 11}
+(gdb) l
+28  {
+29    Complex a,b,sum;
+30    input_complex(&a,&b);
+31    sum=add(a,b);
+32    output(a,b,sum);
+33    return 0;
+34  }(gdb) 
