@@ -1,0 +1,81 @@
+Breakpoint 1, main () at p6original.c:26
+26    s=input_n();
+(gdb) s
+input_n () at p6original.c:3
+3   {
+(gdb) n
+5     printf("enter the value\n");
+(gdb) n
+enter the value
+6     scanf("%d",&x);
+(gdb) n
+5
+7     return x;
+(gdb) n
+8   }
+(gdb) n
+main () at p6original.c:27
+27    i= sum_n(s);
+(gdb) s
+sum_n (n=5) at p6original.c:11
+11    int i,sum=0;
+(gdb) n
+12    i=1;
+(gdb) n
+13    for(i=1;i<=n;i++)
+(gdb) n
+15      sum+=i;
+(gdb) n
+13    for(i=1;i<=n;i++)
+(gdb) n
+15      sum+=i;
+(gdb) n
+13    for(i=1;i<=n;i++)
+(gdb) n
+15      sum+=i;
+(gdb) n
+13    for(i=1;i<=n;i++)
+(gdb) n
+15      sum+=i;
+(gdb) n
+13    for(i=1;i<=n;i++)
+(gdb) n
+15      sum+=i;
+(gdb) n
+13    for(i=1;i<=n;i++)
+(gdb) n
+17    return sum;
+(gdb) n
+18  }
+(gdb) n
+main () at p6original.c:28
+28    output(s,i);
+(gdb) s
+output (n=5, sum=15) at p6original.c:21
+21    printf("sum of %d numbers is %d",n,sum);
+(gdb) n
+22  }
+(gdb) n
+main () at p6original.c:29
+29    return 0;
+(gdb) p s
+$1 = 5
+(gdb) p i
+$2 = 15
+(gdb) l
+24  {
+25    int s,i;
+26    s=input_n();
+27    i= sum_n(s);
+28    output(s,i);
+29    return 0;
+30  }
+31
+32
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 713] will be killed.
+
+Quit anyway? (y or n) y
+ 
